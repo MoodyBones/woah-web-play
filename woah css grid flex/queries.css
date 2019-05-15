@@ -1,0 +1,16 @@
+@media only screen and (max-width: 1080px) {
+    .header {
+      font-size: 16px;
+    }
+  }
+
+@media only screen and (max-width: 690px) {
+  .header, .main-nav, .footer {
+      font-size: 12px;
+    }
+    .main-nav div,
+    .footer p {
+        padding: .5rem 1rem;    
+    }
+  }
+
