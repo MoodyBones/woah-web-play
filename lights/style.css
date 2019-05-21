@@ -18,6 +18,11 @@ blue - summer sky #34ace0
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+	/* --toggle: 0; */
+	--playState: 'paused';
+}
+
 .box {
 	background: #4b4b4b;
 	height: 60vh;
@@ -43,29 +48,53 @@ li {
 	border-radius: 50%;
 }
 
-.lightRow div:nth-of-type(3n+0) {
+.lightO {
+	animation-name: stretch;
+	/* animation-duration: calc(var(--toggle) * .5s); */
+	animation-duration: .5s;
+  animation-timing-function: ease-out; 
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: var(--playState); 
+}
+
+.light1{
 	animation: 
 	stretch
-	1.5s
+	/* calc(var(--toggle) * .5s) */
+	.5s
 	ease-out
-	0s
+	.25s
 	alternate
 	infinite
 	none
-	running;
+	var(--playState);
 }
+
+.light2 {
+	animation: 
+	stretch
+	/* calc(var(--toggle) * .5s) */
+	.5s
+	ease-out
+	.5s
+	alternate
+	infinite
+	none
+	var(--playState);
+}
+
 
 @keyframes stretch {
   0% {
     box-shadow: transparent;
   }
   100% {
-    box-shadow: inset 0 0 5px 5px #fffa65, 0 0 10px 5px #fff;;
+    box-shadow: inset 0 0 5px 5px #fffa65, 0 0 10px 2px #fff;;
   }
 }
-/* .circle:nth-child(odd) {
-	box-shadow: inset 0 0 5px 5px #fffa65, 0 0 10px 5px #fff;
-} */
 
 .header {
 	display: flex;
